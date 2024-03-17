@@ -1,0 +1,15 @@
+--
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install Bind9 package
+    apt:
+      name:
+        - bind9
+        - bind9utils
+        - bind9-doc
+        - dnsutils
+      state: latest
+      update_cache: yes
